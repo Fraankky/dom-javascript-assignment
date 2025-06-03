@@ -29,17 +29,17 @@ function header() {
     homeMenu.textContent = "home";
     homeMenu.classList.add("nav-link");
 
-    const prodcutMenu = document.createElement("a");
-    prodcutMenu.classList.add("product");
-    prodcutMenu.textContent = "product";
-    prodcutMenu.classList.add("nav-link"); 
+    const productMenu = document.createElement("a");
+    productMenu.classList.add("product");
+    productMenu.textContent = "product";
+    productMenu.classList.add("nav-link"); 
 
     const cartMenu = document.createElement("a");
     cartMenu.classList.add("cart");
     cartMenu.textContent = "cart";
     cartMenu.classList.add("nav-link"); 
 
-    nav.append(homeMenu, prodcutMenu, cartMenu);
+    nav.append(homeMenu, productMenu, cartMenu);
     headerElement.append(logo, nav);
 
     document.body.prepend(headerElement)
@@ -62,7 +62,7 @@ async function app() {
         const viewProduct = document.createElement("a")
 
         productContainer.classList.add("productCard")
-        imageProduct.src = product.images;
+        imageProduct.src = product.images[0] ?? 'default-image.jpg';
         imageProduct.width = 320;
         imageProduct.height = 270;
 
